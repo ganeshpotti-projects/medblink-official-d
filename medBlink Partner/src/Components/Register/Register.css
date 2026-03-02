@@ -1,0 +1,12 @@
+.register-container {
+  background-image: url("../../assets/registerBackground.jpg");
+  background-color: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}

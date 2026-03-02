@@ -1,0 +1,13 @@
+.table td {
+  vertical-align: middle;
+}
+
+.ordered-items-cell {
+  max-width: 450px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  text-overflow: ellipsis;
+}

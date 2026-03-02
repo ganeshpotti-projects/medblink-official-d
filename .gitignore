@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# System files
+*.swp
+*.swo
+
+# npm/yarn lock (optional if you want consistent installs)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

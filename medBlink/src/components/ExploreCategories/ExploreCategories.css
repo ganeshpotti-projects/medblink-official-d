@@ -1,0 +1,35 @@
+/* Chrome Browser */
+.explore-product-category-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Different Browser */
+.explore-product-category-list {
+  scrollbar-width: none;
+}
+
+.explore-product-category-list-item img {
+  cursor: pointer;
+}
+
+.explore-product-category-list-item .active {
+  border: 4px solid tomato;
+  padding: 2px;
+}
+
+.explore-product-category-list-item p {
+  color: #747474;
+  cursor: pointer;
+}
+
+.scroll-icon {
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+  color: #747474;
+  transition: color 0.2s;
+}
+
+.scroll-icon:hover {
+  color: tomato;
+}
