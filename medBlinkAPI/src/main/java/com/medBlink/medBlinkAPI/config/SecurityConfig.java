@@ -132,7 +132,7 @@ public class SecurityConfig {
         authBuilder.userDetailsService(appUserDetailsService).passwordEncoder(passwordEncoder);
 
         http
-                .securityMatcher("/api/users/**", "/api/wishlists/**")
+                .securityMatcher("/api/users/**", "/api/wishlists/**", "/api/admin/**")
                 .cors(cors -> cors.configurationSource(corsConfig.corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

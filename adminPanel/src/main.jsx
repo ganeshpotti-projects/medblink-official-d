@@ -17,7 +17,7 @@ import App from "./App.jsx";
 import { ProductsContextProvider } from "./context/ProductsContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/medblink-admin">
     <ProductsContextProvider>
       <StoreContextProvider>
         <App />

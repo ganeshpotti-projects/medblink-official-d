@@ -44,7 +44,7 @@ services:
   # BACKEND
   # ----------------------------
   backend:
-    image: medblink-backend/medblink:V1.0
+    image: medblink/medblink-backend:V1.0 
     container_name: medblink-backend
     ports:
       - "30082:8080"
@@ -61,5 +61,27 @@ services:
     container_name: medblink-customer
     ports:
       - "30081:80"
+    depends_on:
+      - backend
+
+# ----------------------------
+  # ADMIN FRONTEND
+  # ----------------------------
+  admin-frontend:
+    image: medblink/medblink-admin:V1.0
+    container_name: medblink-admin
+    ports:
+      - "30083:80"
+    depends_on:
+      - backend
+
+# ----------------------------
+  # PARTNER FRONTEND
+  # ----------------------------
+  partner-frontend:
+    image: medblink/medblink-partner:V1.0
+    container_name: medblink-partner
+    ports:
+      - "30084:80"
     depends_on:
       - backend
