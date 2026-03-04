@@ -22,7 +22,10 @@ export const PartnerContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!partnerToken) return;
+    if (!partnerToken) {
+      setLoading(false);
+      return;
+    }
 
     const fetchPartner = async () => {
       setLoading(true);
@@ -51,9 +54,9 @@ export const PartnerContextProvider = ({ children }) => {
         });
 
         setStats({
-          ordersDelivered: data.ordersDelivered,
-          blinkPoints: data.blinkPoints,
-          partnerIncome: data.partnerIncome,
+          ordersDelivered: data.ordersDelivered || 0,
+          blinkPoints: data.blinkPoints || {},
+          partnerIncome: data.partnerIncome || {},
         });
       } catch (err) {
         console.error("Error fetching partner:", err);

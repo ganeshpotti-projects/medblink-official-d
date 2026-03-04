@@ -118,7 +118,13 @@ public class PartnerSecurityConfig {
         http
                 .securityMatcher("/api/partners/**", "/api/orders/getPartnerOrders")
                 .cors(cors -> cors.configurationSource(corsConfig.corsConfigurationSource()))
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/partners/auth/loginPartner", 
+                                         "/api/partners/registerPartner",
+                                         "/api/partners/getAllPartners",
+                                         "/api/partners/updatePartnerStatus/**").permitAll()
+                        .anyRequest().authenticated()
+                )
                 .addFilterBefore(partnerJwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .csrf(csrf -> csrf.disable());
 

@@ -17,8 +17,19 @@ const PartnerStats = ({ stats }) => {
   const navigate = useNavigate();
   const [modalData, setModalData] = useState(null);
 
-  const income = stats.partnerIncome;
-  const blinkPointsData = stats.blinkPoints;
+  // Handle null/undefined stats
+  if (!stats) {
+    return (
+      <div className="container mt-4">
+        <div className="alert alert-info">
+          <p className="mb-0">Please log in to view your statistics.</p>
+        </div>
+      </div>
+    );
+  }
+
+  const income = stats?.partnerIncome || {};
+  const blinkPointsData = stats?.blinkPoints || {};
 
   return (
     <div className="container mt-4">

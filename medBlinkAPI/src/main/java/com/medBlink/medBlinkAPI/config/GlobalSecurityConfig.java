@@ -68,9 +68,8 @@ public class GlobalSecurityConfig {
                         "/api/admin/products/**",
                         "/api/users/registerUser",
                         "/api/auth/loginUser",
-                        "/api/orders/**",
+                        "/api/orders/getAllOrders",
                         "/api/contacts/**",
-                        "/api/partners/**",
                         "/ws/**")
                 .cors(cors -> cors.configurationSource(corsConfig.corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
